@@ -1,0 +1,21 @@
+*{
+  margin: 0;
+}
+
+.app_container{
+  /* box-sizing: border-box; */
+  width: 350px;
+  height: 550px;
+  padding: 30px;
+  background-color: brown;
+  margin-left: 35%;
+  margin-top: 4%;
+  box-shadow: 3px 6px 40px black;
+  border-radius: 5%;
+}
+
+.app_list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

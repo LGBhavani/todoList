@@ -1,0 +1,20 @@
+.form_container{
+    margin-top: 20px;
+}
+
+.input_container{
+    width: 200px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+}
+
+.add_button{
+    margin-left: 20px;
+    width: 60px;
+    height: 35px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: tan;
+}
