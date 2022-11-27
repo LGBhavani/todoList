@@ -1,29 +1,16 @@
-import { useState } from "react";
 import "./App.css";
-import Form from "./components/Form";
 import Header from "./components/Header";
-import TodosList from "./components/TodosList";
+import TodoPage from "./pages/TodoPage";
 
 const App = () => {
-  const [input, setInput] = useState("");
-  const [todos, setTodos] = useState([]);
+ 
   return (
     <div className="app_container">
       <div className="app_list">
         <div>
           <Header />
         </div>
-        <div>
-          <Form
-            input = {input}
-            setInput = {setInput}
-            todos = {todos}
-            setTodos = {setTodos} 
-          />
-        </div>
-        <div>
-          <TodosList todos = {todos} setTodos = {setTodos} />
-        </div>
+        <TodoPage />
       </div>
     </div>
   );

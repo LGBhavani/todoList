@@ -1,10 +1,13 @@
 import React from 'react';
-import '../styles/TodosList.css';
+import '../styles/TodosList.scss';
 
 const TodosList = ({todos, setTodos}) =>{
 
     const handleDelete =(id) =>{
-        setTodos(todos.filter((todo) => todo.id!== id))
+        let isConfirm = window.confirm('Do you want to delete this task?');
+        if(isConfirm){
+            setTodos(todos.filter((todo) => todo.id!== id))
+        }
     }
     const handleCompleted = (todo) => {
         setTodos(
@@ -17,12 +20,13 @@ const TodosList = ({todos, setTodos}) =>{
             })
         )
     }
+
     console.log("todos", todos );
     return(
         <div className='todosList_container'>
             {todos.map((todo) => (
                  
-                <li className = 'list_item' key={todo.id}>
+                <li className='list_item' key={todo.id}>
                     <input 
                         type="text"
                         className='input_list_item'
@@ -32,7 +36,7 @@ const TodosList = ({todos, setTodos}) =>{
 
                     <div className='buttons'>
                         <button className='button-complete task-button' onClick={() => handleCompleted(todo)}>
-                            <i className='fa fa-check-circle'></i>
+                            <i className={`fa ${todo.completed ? 'fa-check-circle task-complete' : 'fa-check-circle-o' } `}></i>
                         </button>
                         <button className='button-edit task-button'>
                             <i className='fa fa-edit'></i>
